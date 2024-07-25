@@ -1,0 +1,91 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    margin-left: 5%;
+  }
+  
+  .logo img {
+    height: 53px;
+    margin-right: 10px;
+  }
+  
+  .logo span {
+    color: white;
+    font-size: 2em;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 60px;
+    margin-right: -57%;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    position: relative;  
+    letter-spacing: 2px;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 0;  
+    height: 0.5px; 
+    background-color: white; 
+    transition: width 0.3s ease-in-out; 
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%; 
+  }
+  
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 7%;
+    margin-top: 1.5%;
+    position: relative; /* Necessary for positioning the pseudo-element */
+    width: 40px;
+    height: 40px;
+  }
+  
+  .menu-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    z-index: -1; /* Ensure the background is behind the menu bars */
+  }
+  
+  .menu-bar {
+    width: 15px;
+    height: 2px;
+    background-color: black; 
+    margin: 1.5px  0;
+  }
+  
+  

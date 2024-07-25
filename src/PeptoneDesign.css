@@ -1,0 +1,212 @@
+@keyframes scaleUp {
+    from {
+      transform: scale(0) translateY(50%);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUpNextGeneration {
+    from {
+      transform: scale(0) translateY(50%);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUpProteinDisorder {
+    from {
+      transform: scale(0) translateY(50%);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUpProprietaryExperiments {
+    from {
+      transform: scale(0) translateY(50%);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .image.nextGenerationAnimation {
+    animation: scaleUpNextGeneration 0.5s forwards;
+  }
+  
+  .image.proteinDisorderAnimation {
+    animation: scaleUpProteinDisorder 0.5s forwards;
+  }
+  
+  .image.proprietaryExperimentsAnimation {
+    animation: scaleUpProprietaryExperiments 0.5s forwards;
+  }
+
+a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  font-family: Mate;
+}
+
+a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px; 
+  background-color: #dd9d35; 
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  transition: width 0.3s ease; 
+}
+
+a:hover::after {
+  width: 100%; 
+}
+
+@keyframes bubbleMovement {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(calc(100vw * var(--x)), calc(100vh * var(--y)));
+    opacity: 0;
+  }
+}
+
+.container {
+  transition: background-color 0.5s ease;
+}
+
+.circle {
+  transition: background-color 0.5s ease;
+}
+
+.image {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--bubbleColor);
+  animation: move var(--duration) linear infinite;
+}
+
+.bubble1 {
+  animation: move1 var(--duration1) linear infinite;
+}
+
+.bubble2 {
+  animation: move2 var(--duration2) linear infinite;
+}
+
+.bubble3 {
+  animation: move3 var(--duration3) linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(calc(var(--x) * 100vw), calc(var(--y) * 100vh));
+  }
+  100% {
+    transform: translate(calc((var(--x) + 0.5) * 100vw), calc((var(--y) + 0.5) * 100vh));
+  }
+}
+
+@keyframes move1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(25vw, -25vh);
+  }
+  50% {
+    transform: translate(0, -50vh);
+  }
+  75% {
+    transform: translate(-25vw, -25vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0) translateY(50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0) translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.image.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+.image.fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+.button span {
+  display: inline-block;
+  margin-left: 15px; /* Shift the text to the right */
+}
+

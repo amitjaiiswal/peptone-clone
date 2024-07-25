@@ -1,0 +1,86 @@
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+
+  @keyframes backgroundColorChange {
+    0% {
+      background-color: #2d2b36;
+    }
+    50% {
+      background-color: #3f4279;
+    }
+    100% {
+      background-color: #2d2b36;
+    }
+  }
+  
+  .background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundColorChange 10s infinite alternate;
+  }
+  
+  .redirect-button {
+    font-size: 16px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    width: 60px;
+    height: 60px;
+    background-color: #4d74be;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .redirect-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+  }
+  
+  .redirect-button:hover {
+    background-color: #36548a;
+    transform: scale(1.1);
+  }
+  
+  .redirect-button:hover::before {
+    border: 2px solid white;
+  }
+  
+  .arrow {
+    position: absolute;
+    bottom: 80px;
+    left: 51.8%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid white;
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
