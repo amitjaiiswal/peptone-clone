@@ -1,59 +1,3 @@
-@keyframes scaleUp {
-    from {
-      transform: scale(0) translateY(50%);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1) translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scaleUpNextGeneration {
-    from {
-      transform: scale(0) translateY(50%);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1) translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scaleUpProteinDisorder {
-    from {
-      transform: scale(0) translateY(50%);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1) translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scaleUpProprietaryExperiments {
-    from {
-      transform: scale(0) translateY(50%);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1) translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .image.nextGenerationAnimation {
-    animation: scaleUpNextGeneration 0.5s forwards;
-  }
-  
-  .image.proteinDisorderAnimation {
-    animation: scaleUpProteinDisorder 0.5s forwards;
-  }
-  
-  .image.proprietaryExperimentsAnimation {
-    animation: scaleUpProprietaryExperiments 0.5s forwards;
-  }
-
 a {
   position: relative;
   color: white;
@@ -78,29 +22,6 @@ a::after {
 
 a:hover::after {
   width: 100%; 
-}
-
-@keyframes bubbleMovement {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(calc(100vw * var(--x)), calc(100vh * var(--y)));
-    opacity: 0;
-  }
-}
-
-.container {
-  transition: background-color 0.5s ease;
-}
-
-.circle {
-  transition: background-color 0.5s ease;
-}
-
-.image {
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 
@@ -175,38 +96,35 @@ a:hover::after {
 }
 
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0) translateY(50%);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0) translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.image.fadeOut {
-  animation: fadeOut 0.5s forwards;
-}
-
-.image.fadeIn {
-  animation: fadeIn 0.5s forwards;
-}
 
 .button span {
   display: inline-block;
-  margin-left: 15px; /* Shift the text to the right */
+  margin-left: 15px; 
 }
+
+.container {
+  perspective: 1000px;
+  position: relative;
+  z-index: 2;
+}
+
+.canvas {
+  z-index: 1;
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/voD5pUAAAAASUVORK5CYII='); /* tiny transparent pixel to start with */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/voD5pUAAAAASUVORK5CYII=');
+  background-repeat: repeat;
+  opacity: 0.2;
+  z-index: 2;
+  pointer-events: none;
+}
+
 

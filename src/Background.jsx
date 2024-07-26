@@ -85,10 +85,18 @@ const Background = () => {
           Learn More &gt;
         </a>
       </div>
-      <div className="arrow"></div>
+      {/* <div className="arrow"></div> */}
       <button className="redirect-button" onClick={() => navigate('/page2')}>
         Go
       </button>
+      {/* <div class="button-container" >
+        <div class="scroll-button" onClick={() => navigate('/page2')}>
+            <div class="mouse-icon">
+                <span class="scroll-wheel"></span>
+            </div>
+            <div class="arrow"></div>
+        </div>
+    </div> */}
     </div>
   );
 };
