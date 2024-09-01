@@ -52,11 +52,12 @@ const PeptoneDesign = () => {
   }, [backgroundColor, circleColors]);
 
   useEffect(() => {
+    
     const container = containerRef.current;
     const scene = sceneRef.current;
     const camera = cameraRef.current;
     const renderer = rendererRef.current;
-
+ 
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
     renderer.setClearColor(new THREE.Color(backgroundColor));
@@ -116,14 +117,14 @@ const PeptoneDesign = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       container.removeChild(renderer.domElement);
-      if (planeRef.current) {
-        scene.remove(planeRef.current);
-        planeRef.current.geometry.dispose();
-        planeRef.current.material.dispose();
-        planeRef.current = null;
-      }
+      // if (planeRef.current) {
+      //   scene.remove(planeRef.current);
+      //   planeRef.current.geometry.dispose();
+      //   planeRef.current.material.dispose();
+      //   planeRef.current = null;
+      // }
     };
-  }, [backgroundColor, circleColors]);
+  }, [backgroundColor, circleColors , planeRef.current]);
 
   const handleClick = (backgroundColor, circleColors, button, imageSrc) => {
     setBackgroundColor(backgroundColor);
@@ -192,6 +193,12 @@ const PeptoneDesign = () => {
       defaultImage
     );
   };
+
+// useEffect(()=>{
+//     handleProprietaryExperimentsClick()
+  
+ 
+// },[])
 
 
   return (
